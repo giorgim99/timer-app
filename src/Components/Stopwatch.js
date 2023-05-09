@@ -5,41 +5,12 @@ import './Stopwatch.css'
 
 function Stopwatch() {
 
-  // dasharray 790px
   
-  //progressCircle.style.strokeDasharray = circumference;
-  
-  // const setProgress = (percent) =>{
-    //  progressCircle.style.strokeDashoffset = dasharray - (percent / 100 ) * dasharray;
-    
-    // }
     
     const [ settingsOpen, setSettingsOpen ] = useState(false) 
     const [ time, setTime ] = useState(0)
     const [ timerOn, setTimerOn ] = useState(false)
     const [ offset, setOffset ] = useState(0)
-    // let progress = 10
-    // let radius = 125;
-    // let circumference = radius * 2 * Math.PI;
-    
-    // useEffect(()=>{
-      //   const progressOffset = ((100 - progress) / 100) * circumference;
-      //   setOffset(progressOffset)
-      // }, [setOffset, offset, circumference, progress]);
-      
-      
-    // let progressCircle = document.getElementById('progress');
-    // const [ progressBarLevels, setProgressBarLevels ] = useState['0px', '90px', '180px', '270px', '360px', '450px', '540px', '630px'] 
-
-    // const LINE_MAX = 1465;
-    // const changeLineValue = (ns) => {
-    //   let value = LINE_MAX * (ns / 60);
-    //   if (ns === 0) {
-    //   value = LINE_MAX;
-	  //   }
-	  //   document.documentElement.style.setProperty("--line-value", "" + value);
-    // };
-
 
     useEffect(()=>{
       let counter = 0;
@@ -59,13 +30,6 @@ function Stopwatch() {
       setTime(0)
     }
 
-
-    // setTime(useSelector((state) => state.timer.timePassed));
-    
-    // const ns = Math.floor(time / 1000) % 60;
-    // changeLineValue(ns);
-    
-    
     React.useEffect(()=>{
       let interval = null
 
@@ -77,8 +41,6 @@ function Stopwatch() {
       }else{
           clearInterval(interval)
       }
-
-
 
     return () => clearInterval(interval)
   }, [timerOn])
